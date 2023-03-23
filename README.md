@@ -1,5 +1,25 @@
 # 201830121\_유인준
 
+## <b>3주차</b> - 2023.03.23(목)
+
+<details>
+<summary>
+강의 내용
+</summary>
+<ul>
+<li>리액트 앱 만들기</li>
+<li>jsx란</li>
+<ul>
+<li>jsx 문법</li>
+<li>jsx 장점</li>
+<li>jsx 사용법</li>
+</ul>
+<li>jsx 코드 작성해보기</li>
+
+</ul>
+</details>
+</br>
+
 ## <b>2주차</b> - 2023.03.16(목)
 
 <details>
@@ -27,6 +47,7 @@
 
 </ul>
 </details>
+</br
 
 ## <b>1주차</b> - 2023.03.09(목)
 

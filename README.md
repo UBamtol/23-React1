@@ -1,5 +1,155 @@
 # 201830121\_유인준
 
+## <b>4주차</b> - 2023.03.30(목)
+
+<details>
+<summary>
+강의 내용
+</summary>
+<ul>
+
+<details>
+<summary>
+엘리먼트 렌더링
+</summary>
+
+<li>엘리먼트는 리액트 앱의 가장 작은 빌딩 블록들</li>
+
+|                       | DOM                 | Virtural DOM                                                         |
+| --------------------- | ------------------- | -------------------------------------------------------------------- |
+| 업데이트 속도         | 느리다              | 빠르다                                                               |
+| element 업데이트 방식 | DOM 전체를 업데이트 | 변화 부분을 가상 DOM으로 만든 후 DOM과 비교하여 다른 부분만 업데이트 |
+| 메모리                | 낭비가 심함         | 효율적                                                               |
+
+<li>엘리먼트의 생김새</li>
+- 리액트 엘리먼트는 자바스크립트 객체의 형태로 존재한다.
+- 컴포넌트, 속성 등 내부의 모든 children을 포함하는 일반 JS 객체이다.
+- 불변성을 가진다.
+
+```javascript
+// JavaScript
+{
+  type: 'button',
+  props: {
+    className: 'bg-green',
+    children: {
+      type: 'b',
+      props:{
+        children: "Hello, element'
+      }
+    }
+  }
+}
+```
+
+- 첫번째 매개변수 type은 태그가 들어가면 그대로 표현하고 리액트 컴포넌트가 들어가면 이것을 분해하고 태그로 만든다.
+- 두번째 매개변수 props는 속성을 나타낸다.
+- 세번째 매개변수 children은 자식태그다.
+
+```javascript
+// React
+<button class='bg-green'>
+  <b>Hello, element</b>
+</button>
+```
+
+<li>엘리먼트의 특징</li>
+
+- 가장 큰 특징은 불변성이다. 즉, 한번 생성된 엘리먼트의 children이나 속성은 바꿀 수 없다.
+<li>CDN 방식으로 시계 만들기</li>
+<li>CRA 방식으로 시계 만들기</li>
+</details>
+<details>
+<summary>
+컴포넌트와 props
+</summary>
+
+- 컴포넌트
+  - 리액트는 컴포넌트 기반의 구조
+  - 컴포넌트는 재사용
+- Props
+
+  - property의 준말
+  - 컴포넌트의 속성
+  - props의 특징
+    - 읽기전용(변경 불가능)
+    - 속성이 다른 엘리먼트를 생성하려면 새로운 props를 컴포넌트에 전달해야함
+  - Pure 함수 vs Impure 함수
+
+    - Pure 함수는 인수로 받은 정보가 함수 내부에서도 변하지 않는 함수
+
+      ```javascript
+      function sum(a,b) {
+        reutrn a + b;
+      }
+      ```
+
+    - Impure 함수는 인수로 받은 정보가 함수 내부에서 변하는 함수
+
+      ```javascript
+      function sum(account, amount) {
+        account.total = amount;
+      }
+      ```
+
+  - props 사용법
+
+    - JSX에서는 key-value쌍으로 props를 구성한다.
+      ```javascript
+      function App(props) {
+        return (
+          <Profile
+            name='인준'
+            introduction='안녕하세요, 인준입니다.'
+            viewCount={1000}
+          />
+        );
+      }
+      ```
+    - JSX에서는 중괄호를 사용하면 js코드를 넣을 수 있다.
+      ```javascript
+      function App(props) {
+        return (
+          <Layout
+            width={2560}
+            height={1440}
+            header={<Header title='인준의 블로그입니다.' />}
+            footer={<Footer />}
+          />
+        );
+      }
+      ```
+
+    </ul>
+    </details>
+    </details>
+    </br>
+
+- 컴포넌트 만들기
+  - 컴포넌트의 종류
+    - 리액트 초기 버전에서는 클래스형 컴포넌트를 주로 사용
+    - 이후 Hook이라는 개념이 나오면서 최근에는 함수형 컴포넌트를 주로 사용
+    - 하지만 아직 클래스형 컴포넌트가 남아있기 때문에 둘 다 알아야함
+    - 함수형 컴포넌트
+      ```javascript
+      function Welcome(props) {
+        return <h1>안녕 , {props.name}</h1>;
+      }
+      ```
+    - 클래스형 컴포넌트
+    ```javascript
+    class Welcome extends React.Component {
+      render() {
+        return <h1>안녕 , {this.props.name}</h1>;
+      }
+    }
+    ```
+  - 컴포넌트 이름 짓기
+    - 이름은 항상 대문자로 시작한다. (소문자로 시작하면 DOM태그로 인식한다.)
+    - 컴포넌트 파일은 컴포넌트 이름과 같게 한다.
+  - 컴포넌트의 함성
+  - 컴포넌트의 추출
+
 ## <b>3주차</b> - 2023.03.23(목)
 
 <details>
@@ -12,6 +162,10 @@
 <ul>
 <li>jsx 문법</li>
 <li>jsx 장점</li>
+
+- 가독성이 좋다.
+- 효율이 좋다.
+- injection attack 보안에 강력하다.
 <li>jsx 사용법</li>
 </ul>
 <li>jsx 코드 작성해보기</li>
@@ -47,7 +201,7 @@
 
 </ul>
 </details>
-</br
+</br>
 
 ## <b>1주차</b> - 2023.03.09(목)
 

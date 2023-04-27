@@ -1,5 +1,143 @@
 # 201830121\_유인준
 
+## <b>7주차</b> - 2023.04.27(목)
+
+<details>
+<summary>
+강의 내용
+</summary>
+<ul>
+<li>이벤트 핸들링</li>
+<details> 
+  <summary>이벤트 처리하기</summary>
+  - DOM에서 클릭 이벤트를 처리하는 방법
+
+```jsx
+<button onclick='activate()'>Activate</button>
+```
+
+- React에서 클릭 이벤트를 처리하는 방법
+
+```jsx
+<button onClick={activate}>Activate</button>
+```
+
+- 차이점
+  1. 이벤트 이름이 onclick에서 onClick으로 변경(camelCase)
+  2. 전달하려는 ㅎ마수는 문자열에서 함수 그대로 전달
+- 이벤트가 발생했을 때 해당 이벤트를 처리하는 함수를 "이벤트 핸들러"라고 한다. 또는 이벤트가 발생하는 것을 계속 듣고 있다는 의미로 "이벤트 리스너"라고도 한다.
+
+```jsx
+const useCounter = (initialValue) => {
+  const [isToggle, setIsToggle] = useState(true);
+
+  // 방법 1. 함수 안에 함수로 정의
+  function handleClick() {
+    setIsToggle(() => !isToggle);
+  }
+  // 방법 2. arrow function을 사용하여 정의
+  const handleClick = () => {
+    setIsToggle(() => !isToggle);
+  };
+
+  return <button onClick={handleClick}>{isToggle ? '켜짐' : '꺼짐'}</button>;
+};
+```
+
+  </details>
+
+  <details> 
+  <summary>arguments 전달하기</summary>
+  - 함수를 정의할 때 파라미터 혹은 매개변수, 함수를 사용할 때 아귀먼트 혹은 인자라고 부른다.
+  
+  </details>
+    <details> 
+      <summary>조건부 렌더링</summary>
+
+- ```jsx
+  function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+      return <UserGreeting />;
+    }
+    return <GuestGreeting />;
+  }
+  ```
+- props로 전달 받은 isLoggedIn이 true이면 <UserGreeting />을, false면 <GuestGreeting>을 리턴한다.
+- 이와 같은 렌더링을 조건부 렌더링이라고 한다.
+
+    <details> 
+    <summary>엘리먼트 변수</summary>
+    - 렌더링해야 될 컴포넌트를 변수처럼 사용하는 방법이 엘리먼트 변수이다.
+
+  ```jsx
+  let button;
+  if (isLoggedIn()) {
+    button = <LogoutButton onClick={handleLogoutClick} />;
+  } else {
+    button = <LoginButton onClick={handleLoginClick} />;
+  }
+
+  return (
+    <div>
+      <Greeting isLoggedIn={isLoggedIn} />
+      {button}
+    </div>
+  );
+  ```
+
+    </details>
+     <details> 
+    <summary>인라인 조건</summary>
+    1. 인라인 if
+    - if문을 직접 사용하지 않고, 동일한 효과를 내기 위해 && 논리 연산자를 사용
+    - &&는 and 연산자로 모든 조건이 참일 때만 참이 된다.
+    - 첫번째 조건이 거짓이면 두번째 조건은 판단할 필요가 없다. 단축평가
+
+  ```jsx
+  {
+    unreadMessage.length > 0 && (
+      <h2>현재 {unreadMessage.length}개의 읽지 않은 메시지가 있습니다.</h2>
+    );
+  }
+  ```
+
+  2. 인라인 if-else
+
+  - 삼항 연산자를 사용 -> 조건문 ? 참일 경우 : 거짓일 경우
+  - 문자열이나 엘리먼틀르 넣어서 사용할 수도 있다.
+
+  ```jsx
+  function UserStatus(props) {
+    return (
+      <div>
+        이 사용자는 현재
+        <b>{props.isLoggedIn ? '로그인' : '로그인하지 않은'}</b> 상태입니다.
+      </div>
+    );
+  }
+  ```
+
+  3. 컴포넌트 렌더링 막기
+
+  - 컴포넌트를 렌더링하고 싶지 않을 때에는 null을 리턴한다.
+
+  ```jsx
+  function WarningBanner(props) {
+    if (!props.warning) {
+      return null;
+    }
+    return <div>경고!</div>;
+  }
+  ```
+
+    </details>
+    </details>
+  </details>
+    </ul>
+    </details>
+    </br>
+
 ## <b>6주차</b> - 2023.04.13(목)
 
 <details>

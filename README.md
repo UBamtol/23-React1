@@ -1,5 +1,56 @@
 # 201830121\_유인준
 
+## <b>8주차</b> - 2023.05.04(목)
+
+<details>
+<summary>
+강의 내용
+</summary>
+<ul>
+<li>리스트와 키</li>
+<details> 
+  <summary>리스트와 키</summary>
+
+- 리스트는 자바스크립트의 변수나 객체를 하나의 변수로 묶어 놓은 배열과 같은 것이다.
+- 키는 각 객체나 아이템을 구분할 수 있는 고유한 값을 의미한다.
+- 리액트에서는 배열과 키를 사용하는 반복되는 다수의 엘리먼트를 쉽게 렌더링할 수 있다.
+  </details>
+    <details> 
+      <summary>리스트 컴포넌트</summary>
+
+  ```jsx
+  function NumberList(props) {
+    const { number } = props;
+    const listItems = numbers.map((number, i) => {
+      <li key={i}>{number}</li>;
+    });
+    return <ul>{listItems}</ul>;
+  }
+
+  const numbers = [1, 2, 3, 4];
+  ReactDOM.render(
+    <NumberList numbers={numbers} />,
+    document.getElementById('root')
+  );
+  ```
+
+  - 리스트에서의 키는 '리스트에서 아이템을 구별하기 위한 고유한 문자열'이다.
+  - 이 키는 리스트에서 어떤 아이템이 변경, 추가 또는 제거되었는지 구분하기 위해 사용한다.
+  - 키는 같은 리스트에 있는 엘리먼트 사이에서만 고유한 값이면 된다.
+
+    </details>
+    <li>폼</li>
+      - 일반적으로 사용자로부터 입력을 받기 위한 양식에서 많이 사용된다.
+    <li>제어 컴포넌트</li>
+      - 사용자가 입력한 값에 접근하고 제어할 수 있도록 해주는 컴포넌트다.
+    <details> 
+    <summary>폼이란</summary>
+    </details>
+
+</ul>
+</details>
+<br/>
+
 ## <b>7주차</b> - 2023.04.27(목)
 
 <details>

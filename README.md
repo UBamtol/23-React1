@@ -1,5 +1,88 @@
 # 201830121\_유인준
 
+## <b>10주차</b> - 2023.05.18(목)
+
+<details>
+<summary>
+강의 내용
+</summary>
+<ul>
+<details>
+<summary>
+합성
+</summary>
+
+- 합성은 '여러 개의 컴포넌트를 합쳐서 새로운 컴포넌트를 만드는 것'이다.
+
+1. containment(담다, 포함하다, 격리하다)
+   - 특정 컴포넌트가 하위 컴포넌트를 포함하는 형태의 합성 방법
+   - 범용적인 '박스' 역할을 하는 sidebar 혹은 dialog와 같은 컴포넌트에서 특히 자주 볼 수 있다.
+   - 이런 컴포넌트에서는 children prop을 사용하여 자식 엘리먼트를 출력에 그대로 전달하는 것이 좋다.
+2. specialization(특수화, 전문화)
+   - 범용적인 개념을 구별이 되게 구체화하는 것을 특수화라고 한다.
+   - 객체지향 언어에서는 상속을 사용하여 특수화를 구현한다.
+   - 리액트에서는 합성을 사용하여 특수화를 구현한다.
+3. containment와 specialization을 같이 사용하기
+   - containment를 위해서 props.children을 사용, specialization을 위해 직접 정의한 props를 사용하면 된다.
+
+</details>
+  <details>
+  <summary>
+  상속
+  </summary>
+
+- 합성과 대비되는 개념으로 상속(inheritance)이 있다.
+- 자식 클래스는 부모 클래스가 가진 변수나 함수 등의 속성을 모두 갖게 되는 개념이다.
+- 하지만 리액트에서는 상속보다는 합성을 통해 새로운 컴포넌트를 생성한다.
+
+</details>
+<details>
+  <summary>
+  컨텍스트
+  </summary>
+
+- 컨텍스트는 리액트 컴포넌트들 사이에서 데이터를 기존의 props를 통해 전달하는 방식 대신 '컴포넌트 트리를 통해 곧바로 컴포넌트에 전달하는 새로운 방식'을 제공한다.
+- 이것을 통해 어떤 컴포넌트라도 쉽게 데이터에 접근할 수 있다.
+- 무조건 컨텍스트를 사용하는 것은 좋지 않다, 컴포넌트와 컨텍스트가 연동되면 재사용성이 떨어지기 때문이다.
+
+</details>
+<details>
+  <summary>
+  컨텍스트 API
+  </summary>
+
+1. React.createContext
+
+- 컨텍스트를 생성하기 위한 함수
+- 파라미터에는 기본값을 넣어주면 된다.
+- 하위 컴포넌트는 가장 가까운 상위 레벨의 Provider로부터 컨텍스트를 받게 되지만, 만일 Provider를 찾을 수 없다면 위에서 설정한 기본값을 사용하게 된다.
+
+2. Context.Provider
+
+- Context.Provider 컴포넌트로 하위 컴포넌트들을 감싸주면 모든 하위 컴포넌트들이 해당 컨텍스트의 데이터에 접근할 수 있게 된다.
+- Provider 컴포넌트에는 value라는 prop이 있고, 이것은 Provider 컴포넌트 하위에 있는 컴포넌트에게 전달된다.
+- 하위 컴포넌트를 consumer 컴포넌트라고 부른다.
+
+3. Class.contextType
+
+- Provider 하위에 있는 클래스 컴포넌트에서 컨텍스트의 데이터에 접근하기 위해 사용한다.
+- Class 컴포넌트는 더이상 사용하지 않으므로 참고만 한다
+
+4. ContextConsumer
+
+- 함수형 컴포넌트에서 Context.Consumer를 사용하여 컨텍스트를 구독할 수 있다.
+- 컴포넌트의 자식으로 함수가 올 수 있는데 이것을 function as a child라고 부른다.
+
+5. Context.displayName
+
+- 컨텍스트 객체는 displayName이라는 문자열 속성을 갖는다.
+
+</details>
+  </ul>
+
+</details>
+<br>
+
 ## <b>9주차</b> - 2023.05.11(목)
 
 <details>

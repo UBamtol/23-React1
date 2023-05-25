@@ -1,5 +1,42 @@
 # 201830121\_유인준
 
+## <b>11주차</b> - 2023.05.25(목)
+
+<details>
+<summary>
+강의 내용
+</summary>
+<ul>
+<details>
+<summary>
+useContext
+</summary>
+
+- 함수형 컴포넌트에서 컨텍스트를 사용하기 위해 컴포넌트를 매번 Consumer 컴포넌트로 감싸주는 것보다 더 좋은 방법이 있다. Hook을 이용하는 것이다.
+- useContext() 훅은 React.createContext() 함수 호출로 생성된 컨텐스트 객체를 인자로 받아서 현재 컨텍스트의 값을 리턴한다.
+- 만일 값을 변경하게 되면 useContext() 훅을 사용한는 컴포넌트가 재 렌더링된다.
+</details>
+<details>
+<summary>
+스타일링
+</summary>
+
+- css
+  - 선택자
+    - id, class, tag
+    - :hover : 마우스 커서가 엘리먼트 위에 올라왔을 때
+    - :active : 주로 &#60;a&#62; 태그(link)에 사용, 엘리먼트가 클릭됐을 때
+    - :focus : 주로 &#60;input&#62; 태그에서 사용, 엘리먼트에 초점을 갖고 있을 때
+    - :checked : radio button이나 checkbox 같은 유형의 &#60;input&#62; 태그가 체크됐을 때
+    - :first-child, :last-child : 상위 엘리먼트를 기준으로 각각 첫번째 child, 마지막 child일 경우를 의미
+  - static : 기본값으로 엘리먼트를 원래의 순서대로 위치
+  - fixed : 엘리먼트를 브라우저 window에 상대적으로 위치
+  - relative : 엘리먼트를 보통의 위치에 상대적으로 위치
+  - absolute : 엘리먼트를 절대 위치에 위치, 이때 기준은 첫번째 상위 엘리먼트
+    </details>
+    <br>
+    </ul>
+
 ## <b>10주차</b> - 2023.05.18(목)
 
 <details>
